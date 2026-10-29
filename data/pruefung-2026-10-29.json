@@ -1,0 +1,234 @@
+{
+  "geprueft_am": "2026-10-29",
+  "art": "Von Hand auf der Seite des Anbieters geprüft (im Browser dargestellte Seite, Land Deutschland gewählt)",
+  "eintraege": [
+    {
+      "id": "enbw-mobility-tarif-s",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.enbw.com/elektromobilitaet/produkte/ladetarife"
+      ],
+      "seite": "Tarifkachel „Ladetarif S“ (Bild, „Stand: 01.12.2025“): EnBW-Ladestationen 56 ct/kWh; Andere Betreiber ab 56 ct/kWh, max. 89 ct/kWh; Monatliche Grundgebühr 0 €; Blockiergebühr > 4 h 10 ct/min (max. 12,00 €). Fußnote 2: „jedoch nicht mehr als 12,00 € pro Ladevorgang“.",
+      "korrektur": {
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min., höchstens 12 € je Ladevorgang"
+      },
+      "unsere_werte": {
+        "anbieter": "EnBW mobility+",
+        "tarif": "Tarif S",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": 0.56,
+        "dc_eur_kwh": 0.56,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "EnBW",
+        "andere_betreiber_ac_eur_kwh": 0.89,
+        "andere_betreiber_dc_eur_kwh": 0.89,
+        "blockiergebuehr_eur_min": 0.1,
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min.",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife",
+        "hinweis": "Preis an EnBW-Säulen; bei anderen Betreibern 0,56–0,89 €/kWh."
+      }
+    },
+    {
+      "id": "enbw-mobility-tarif-m",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.enbw.com/elektromobilitaet/produkte/ladetarife"
+      ],
+      "seite": "Tarifkachel „Ladetarif M“ (Bild, „Stand: 01.12.2025“): EnBW-Ladestationen 46 ct/kWh; Andere Betreiber ab 56 ct/kWh, max. 89 ct/kWh; Monatliche Grundgebühr 5,99 €; Blockiergebühr > 4 h 10 ct/min (max. 12,00 €). Fußnote 2: „jedoch nicht mehr als 12,00 € pro Ladevorgang“.",
+      "korrektur": {
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min., höchstens 12 € je Ladevorgang"
+      },
+      "unsere_werte": {
+        "anbieter": "EnBW mobility+",
+        "tarif": "Tarif M",
+        "grundgebuehr_eur_monat": 5.99,
+        "ac_eur_kwh": 0.46,
+        "dc_eur_kwh": 0.46,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "EnBW",
+        "andere_betreiber_ac_eur_kwh": 0.89,
+        "andere_betreiber_dc_eur_kwh": 0.89,
+        "blockiergebuehr_eur_min": 0.1,
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min.",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife",
+        "hinweis": "Preis an EnBW-Säulen; bei anderen Betreibern 0,56–0,89 €/kWh."
+      }
+    },
+    {
+      "id": "enbw-mobility-tarif-l",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.enbw.com/elektromobilitaet/produkte/ladetarife"
+      ],
+      "seite": "Tarifkachel „Ladetarif L“ (Bild, „Stand: 01.12.2025“): EnBW-Ladestationen 39 ct/kWh; Andere Betreiber ab 56 ct/kWh, max. 89 ct/kWh; Monatliche Grundgebühr 11,99 €; Blockiergebühr > 4 h 10 ct/min (max. 12,00 €). Fußnote 2: „jedoch nicht mehr als 12,00 € pro Ladevorgang“.",
+      "korrektur": {
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min., höchstens 12 € je Ladevorgang"
+      },
+      "unsere_werte": {
+        "anbieter": "EnBW mobility+",
+        "tarif": "Tarif L",
+        "grundgebuehr_eur_monat": 11.99,
+        "ac_eur_kwh": 0.39,
+        "dc_eur_kwh": 0.39,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "EnBW",
+        "andere_betreiber_ac_eur_kwh": 0.89,
+        "andere_betreiber_dc_eur_kwh": 0.89,
+        "blockiergebuehr_eur_min": 0.1,
+        "blockiergebuehr": "ab 4 Std., 0,10 €/Min.",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife",
+        "hinweis": "Preis an EnBW-Säulen; bei anderen Betreibern 0,56–0,89 €/kWh."
+      }
+    },
+    {
+      "id": "fastned-standard",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.fastnedcharging.com/de/laden/tarife"
+      ],
+      "seite": "Land Deutschland: „Standardpreis € 0,69 in Deutschland“; der App-Rabatt von 10 % gilt laut Seite in Deutschland nicht.",
+      "unsere_werte": {
+        "anbieter": "Fastned",
+        "tarif": "Standard",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.69,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Fastned",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.fastnedcharging.com/de/laden/tarife",
+        "hinweis": "Nur an Fastned-Säulen."
+      }
+    },
+    {
+      "id": "fastned-gold",
+      "ergebnis": "abweichung",
+      "urls": [
+        "https://www.fastnedcharging.com/de/laden/tarife"
+      ],
+      "seite": "Land Deutschland: „Abo-Preis € 0,49 (€ 0,49 pro kWh in Deutschland)“; in der Preiskachel „€5,99 pro Monat bis Anfang 2027; jederzeit nach 30 Tagen kündbar“; weiter unten „Das Abo zum halben Monatspreis - gültig bis zum 31. Oktober: Euro-Zone: € 5,99“. 11,99 € wird nicht genannt.",
+      "grund": "DC 0,49 stimmt; Grundgebühr und Ende der Aktion widersprechen sich auf der Seite (bis Anfang 2027 oder bis 31. Oktober), „danach 11,99 €“ steht nicht mehr dort",
+      "unsere_werte": {
+        "anbieter": "Fastned",
+        "tarif": "Gold",
+        "grundgebuehr_eur_monat": null,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.49,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Fastned",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": "2026-10-31",
+        "quelle_url": "https://www.fastnedcharging.com/de/laden/tarife",
+        "hinweis": "Nur an Fastned-Säulen. Bis 31. Oktober 5,99 € im Monat als Aktion, danach laut Fastned 11,99 €."
+      }
+    },
+    {
+      "id": "elli-premium",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.elli.eco/de/privatkunden/produkte/ladetarife"
+      ],
+      "seite": "Tarife in Deutschland (Auswahl „Deutschland“), Premium: 17,99 € monatlich; IONITY 0,48 € / kWh; SPN 0,55 € / kWh; AC 0,50 € / kWh; DC 0,69 € / kWh; EnBW 0,83 € / kWh.",
+      "unsere_werte": {
+        "anbieter": "Elli",
+        "tarif": "Premium",
+        "grundgebuehr_eur_monat": 17.99,
+        "ac_eur_kwh": 0.5,
+        "dc_eur_kwh": 0.69,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": null,
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.elli.eco/de/privatkunden/produkte/ladetarife",
+        "hinweis": "Auch für We Charge, CUPRA Charging und Powerpass; bei IONITY 0,48, bei Aral pulse und weiteren Partnern 0,55, bei EnBW 0,83 €/kWh."
+      }
+    },
+    {
+      "id": "electra-app-ohne-abo",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.go-electra.com/de/price/"
+      ],
+      "seite": "Land Deutschland: „Mit App, Ohne Abonnement … 0.54€ / kWh inkl. MwSt.“; FAQ: Belegungsgebühr 0,40 €/min ab 80 % Ladestand bei ausgelasteter Station, 5 Minuten Karenzzeit, höchstens 50 € pro Sitzung.",
+      "unsere_werte": {
+        "anbieter": "Electra",
+        "tarif": "App ohne Abo",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.54,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Electra",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": 0.4,
+        "blockiergebuehr": "ab 80 % bei voller Station 0,40 €/Min. (nach 5 Min.), höchstens 50 €",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.go-electra.com/de/price/",
+        "hinweis": "Nur an Electra-Schnellladern, Einheitspreis in Deutschland."
+      }
+    },
+    {
+      "id": "electra-essential",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.go-electra.com/de/electra-plus/",
+        "https://www.go-electra.com/de/price/"
+      ],
+      "seite": "Land Deutschland: Electra+ Essential „Sparen Sie 0.10€ / kWh bei jedem Ladevorgang bei Electra“, „1.99€ / Monat“, „Keine Bindung“; Standard-App-Preis „0.54€ / kWh inkl. MwSt“ – also 0,44 €/kWh.",
+      "unsere_werte": {
+        "anbieter": "Electra",
+        "tarif": "Electra+ Essential",
+        "grundgebuehr_eur_monat": 1.99,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.44,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Electra",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": 0.4,
+        "blockiergebuehr": "ab 80 % bei voller Station 0,40 €/Min. (nach 5 Min.), höchstens 50 €",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.go-electra.com/de/electra-plus/",
+        "hinweis": "Nur an Electra-Säulen, 0,10 €/kWh unter dem App-Preis; keine Bindung."
+      }
+    },
+    {
+      "id": "electra-smart",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.go-electra.com/de/electra-plus/",
+        "https://www.go-electra.com/de/price/"
+      ],
+      "seite": "Land Deutschland: Electra+ Smart „Sparen Sie 0.20€ / kWh bei jedem Ladevorgang bei Electra“, „4.99€ / Monat“, „Keine Bindung“; „Lade zu einem vergünstigten Tarif von 0,64€/kWh in den Netzen unserer Partner: Atlante, Fastned, und Ionity“; Standard-App-Preis „0.54€ / kWh inkl. MwSt“ – also 0,34 €/kWh.",
+      "unsere_werte": {
+        "anbieter": "Electra",
+        "tarif": "Electra+ Smart",
+        "grundgebuehr_eur_monat": 4.99,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.34,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Electra",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": 0.4,
+        "blockiergebuehr": "ab 80 % bei voller Station 0,40 €/Min. (nach 5 Min.), höchstens 50 €",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.go-electra.com/de/electra-plus/",
+        "hinweis": "An Electra-Säulen 0,20 €/kWh unter dem App-Preis; bei Atlante, Fastned und IONITY 0,64 €/kWh."
+      }
+    }
+  ]
+}

@@ -9,15 +9,21 @@
        prüft nur die Dateien in data/ (ohne App)
    Optionen: --heute JJJJ-MM-TT (Stichtag für Aktionen und Alter, sonst heute), --max-alter-tage 30
 
-   Nicht exportiert werden Zeilen ohne Quelle auf der eigenen Seite des Anbieters und Aktionspreise nach ihrem Ende.
-   Jeder andere Prüffehler bricht ab, ohne Dateien zu schreiben. */
+   Von Hand geprüft (data/pruefung-JJJJ-MM-TT.json): Ein Eintrag gilt nur, solange die Zeile aus der App genau die
+   geprüften Werte hat (unsere_werte). „bestaetigt“ setzt stand auf das Prüfdatum und übernimmt eine Textkorrektur
+   (blockiergebuehr, hinweis); „abweichung“ und „nicht_pruefbar“ nehmen die Zeile heraus. Bei mehreren Prüfungen gilt
+   die jüngste passende.
+
+   Nicht exportiert werden Zeilen ohne Quelle auf der eigenen Seite des Anbieters, Aktionspreise nach ihrem Ende und
+   Zeilen, die bei einer Prüfung abwichen. Jeder andere Prüffehler bricht ab, ohne Dateien zu schreiben. */
 import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { stripTypeScriptTypes } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const WURZEL = join(dirname(fileURLToPath(import.meta.url)), '..');
+const DATEN = join(WURZEL, 'data');
 const JSON_DATEI = join(WURZEL, 'data', 'ladekarten-tarife.json');
 const CSV_DATEI = join(WURZEL, 'data', 'ladekarten-tarife.csv');
 const README = join(WURZEL, 'README.md');
@@ -132,10 +138,15 @@ function quelleFehler(anbieter, url) {
   return null;
 }
 
+/* „ab 4 Std., 0,10 €/Min.“ → 0.1; mehrere verschiedene Beträge oder keiner → null */
+function proMinute(block) {
+  const b = block ? [...new Set([...block.matchAll(/(\d+,\d+)\s?€\/Min/g)].map((m) => Number(m[1].replace(',', '.'))))] : [];
+  return b.length === 1 ? b[0] : null;
+}
+
 /* Eine Zeile aus einem Tarif der App-Liste; interne Felder (id, art) bleiben weg */
 function zeileAus(a, t) {
   const block = t.block ?? null;
-  const proMin = block ? [...new Set([...block.matchAll(/(\d+,\d+)\s?€\/Min/g)].map((m) => Number(m[1].replace(',', '.'))))] : [];
   return {
     id: zeilenId(a.name, t.name),
     anbieter: a.name,
@@ -147,7 +158,7 @@ function zeileAus(a, t) {
     preise_gelten_bei: t.nurBei ?? null,
     andere_betreiber_ac_eur_kwh: t.nurBei ? (t.sonstAc ?? null) : null,
     andere_betreiber_dc_eur_kwh: t.nurBei ? (t.sonstDc ?? null) : null,
-    blockiergebuehr_eur_min: proMin.length === 1 ? proMin[0] : null,
+    blockiergebuehr_eur_min: proMinute(block),
     blockiergebuehr: block,
     gueltig_bis: t.bis ?? null,
     stand: t.stand,
@@ -200,6 +211,65 @@ function pruefe(zeilen, heute, maxAlter) {
     }
   }
   return { fehler, warnungen };
+}
+
+/* Von Hand geprüfte Zeilen (data/pruefung-JJJJ-MM-TT.json), älteste zuerst */
+const ERGEBNISSE = ['bestaetigt', 'abweichung', 'nicht_pruefbar'];
+const KORRIGIERBAR = ['blockiergebuehr', 'hinweis'];
+const VERGLEICH = FELDER.filter((k) => k !== 'id' && k !== 'stand');
+function ladePruefungen() {
+  const dateien = readdirSync(DATEN).filter((d) => /^pruefung-\d{4}-\d{2}-\d{2}\.json$/.test(d)).sort();
+  const fehler = [];
+  const pruefungen = dateien.map((datei) => {
+    const p = JSON.parse(readFileSync(join(DATEN, datei), 'utf8'));
+    const f = (m) => fehler.push(`${datei}: ${m}`);
+    if (p.geprueft_am !== datei.slice(9, 19) || !datumOk(p.geprueft_am)) f('geprueft_am passt nicht zum Dateinamen');
+    if (!Array.isArray(p.eintraege)) f('eintraege fehlt');
+    const ids = new Set();
+    for (const e of p.eintraege ?? []) {
+      if (ids.has(e.id)) f(`${e.id} doppelt`);
+      ids.add(e.id);
+      if (!ERGEBNISSE.includes(e.ergebnis)) f(`${e.id}: ergebnis muss ${ERGEBNISSE.join(', ')} sein`);
+      if (!Array.isArray(e.urls) || !e.urls.length || e.urls.some((u) => !/^https:\/\//.test(u))) f(`${e.id}: urls (https) fehlen`);
+      if (typeof e.seite !== 'string' || !e.seite.trim()) f(`${e.id}: seite (Wortlaut der Anbieterseite) fehlt`);
+      if (e.ergebnis !== 'bestaetigt' && (typeof e.grund !== 'string' || !e.grund.trim())) f(`${e.id}: grund fehlt`);
+      if (!e.unsere_werte || VERGLEICH.some((k) => !(k in e.unsere_werte))) f(`${e.id}: unsere_werte unvollständig`);
+      for (const k of Object.keys(e.korrektur ?? {})) if (!KORRIGIERBAR.includes(k)) f(`${e.id}: korrektur nur für ${KORRIGIERBAR.join(', ')}`);
+      if (e.korrektur && e.ergebnis !== 'bestaetigt') f(`${e.id}: korrektur nur bei bestaetigt`);
+    }
+    return { datei, geprueft_am: p.geprueft_am, eintraege: p.eintraege ?? [] };
+  });
+  if (fehler.length) abbruch(`Prüfdateien fehlerhaft:\n  ${fehler.join('\n  ')}`);
+  return pruefungen;
+}
+
+/* Wendet die jüngste passende Prüfung je Zeile an; liefert die herausgenommenen Zeilen (mit Grund) und Hinweise */
+function wendePruefungenAn(zeilen, pruefungen) {
+  const raus = new Map();
+  const hinweise = [];
+  const gleich = (z, w) => VERGLEICH.every((k) => (z[k] ?? null) === (w[k] ?? null));
+  for (const z of zeilen) {
+    let treffer = null;
+    let veraltet = null;
+    for (const p of pruefungen)
+      for (const e of p.eintraege)
+        if (e.id === z.id) {
+          if (gleich(z, e.unsere_werte)) treffer = { ...e, datum: p.geprueft_am, datei: p.datei };
+          else veraltet = p.datei;
+        }
+    if (!treffer) {
+      if (veraltet) hinweise.push(`${z.anbieter} / ${z.tarif}: Zeile seit ${veraltet} in der App geändert, Prüfung gilt nicht mehr`);
+      continue;
+    }
+    if (treffer.ergebnis === 'bestaetigt') {
+      Object.assign(z, treffer.korrektur ?? {});
+      z.blockiergebuehr_eur_min = proMinute(z.blockiergebuehr);
+      if (treffer.datum > z.stand) z.stand = treffer.datum;
+    } else raus.set(z, `${treffer.ergebnis === 'abweichung' ? 'weicht von der Anbieterseite ab' : 'nicht prüfbar'} (${treffer.datei}): ${treffer.grund}`);
+  }
+  for (const p of pruefungen)
+    for (const e of p.eintraege) if (!zeilen.some((z) => z.id === e.id)) hinweise.push(`${p.datei}: ${e.id} nicht mehr in der App-Liste`);
+  return { raus, hinweise };
 }
 
 const zelle = (v) => (v == null ? '' : typeof v === 'number' ? String(v) : /[",\r\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
@@ -256,11 +326,13 @@ async function ladeListe(a) {
 async function exportieren(a) {
   const anbieter = await ladeListe(a);
   const alle = anbieter.flatMap((x) => x.tarife.map((t) => zeileAus(x, t)));
+  const geprueft = wendePruefungenAn(alle, ladePruefungen());
   const zeilen = [];
   const raus = [];
   for (const z of alle) {
     const q = typeof z.quelle_url === 'string' && z.quelle_url ? quelleFehler(z.anbieter, z.quelle_url) : 'keine Quelle';
     if (q) raus.push(`${z.anbieter} / ${z.tarif}: ${q}`);
+    else if (geprueft.raus.has(z)) raus.push(`${z.anbieter} / ${z.tarif}: ${geprueft.raus.get(z)}`);
     else if (datumOk(z.gueltig_bis) && z.gueltig_bis < a.heute) raus.push(`${z.anbieter} / ${z.tarif}: Aktion endete ${z.gueltig_bis}, Preis neu prüfen`);
     else zeilen.push(z);
   }
@@ -273,12 +345,14 @@ async function exportieren(a) {
   writeFileSync(README, setzeReadme(readFileSync(README, 'utf8'), m));
   console.log(`${zeilen.length} Tarife von ${m.anzahl_anbieter} Anbietern geschrieben (Stand ${m.aeltester_stand} bis ${m.stand}).`);
   if (raus.length) console.log(`Nicht exportiert (${raus.length}):\n  ${raus.join('\n  ')}`);
-  if (warnungen.length) console.log(`Hinweise (${warnungen.length}):\n  ${warnungen.join('\n  ')}`);
+  const alleHinweise = [...geprueft.hinweise, ...warnungen];
+  if (alleHinweise.length) console.log(`Hinweise (${alleHinweise.length}):\n  ${alleHinweise.join('\n  ')}`);
 }
 
 function nurPruefen(a) {
   const daten = JSON.parse(readFileSync(JSON_DATEI, 'utf8'));
   const zeilen = daten.tarife ?? [];
+  ladePruefungen();
   const { fehler, warnungen } = pruefe(zeilen, a.heute, a.maxAlter);
   const m = metadaten(zeilen);
   for (const [k, v] of Object.entries(m)) if (daten[k] !== v) fehler.push(`JSON-Kopf: ${k} ist ${daten[k]}, erwartet ${v}`);
