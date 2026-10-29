@@ -331,6 +331,83 @@
         "quelle_url": "https://www.ionity.eu/de/abonnements",
         "hinweis": "Nur an IONITY-Säulen."
       }
+    },
+    {
+      "id": "aral-pulse-klassik",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html"
+      ],
+      "seite": "Tabelle „Preise im deutschen Aral pulse Netzwerk“, Klassik-Tarif: DC über 50 kW 0,62 €/kWh, DC 50 kW oder weniger 0,52 €/kWh, AC 0,47 €/kWh; „Klassik & Extra-Tarif – Preise bei Fremdanbietern“ Deutschland AC 0,59 €/kWh, DC 0,79 €/kWh. Standzeitgebühr bei Drittanbietern: „AC-Ladepunkte: 0,15 € pro Minute ab 360 Minuten Anschlusszeit“, „DC‑Ladepunkte: 0,15 € pro Minute ab 45 Minuten Anschlusszeit“.",
+      "korrektur": {
+        "blockiergebuehr": "bei anderen Betreibern 0,15 €/Min. (AC ab 6 Std., DC ab 45 Min.)"
+      },
+      "unsere_werte": {
+        "anbieter": "Aral pulse",
+        "tarif": "Klassik",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": 0.47,
+        "dc_eur_kwh": 0.62,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Aral",
+        "andere_betreiber_ac_eur_kwh": 0.59,
+        "andere_betreiber_dc_eur_kwh": 0.79,
+        "blockiergebuehr_eur_min": 0.15,
+        "blockiergebuehr": "bei anderen Betreibern 0,15 €/Min. (AC ab 2 Std., DC ab 45 Min.)",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html",
+        "hinweis": "An Aral-Säulen; DC bis 50 kW 0,52; bei anderen Betreibern AC 0,59, DC 0,79."
+      }
+    },
+    {
+      "id": "aral-pulse-extra",
+      "ergebnis": "abweichung",
+      "urls": [
+        "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html"
+      ],
+      "seite": "Extra-Tarif: DC über 50 kW 0,54 €/kWh, DC 50 kW oder weniger 0,46 €/kWh, AC 0,41 €/kWh, monatliche Grundgebühr 2,99 €; „Klassik & Extra-Tarif – Preise bei Fremdanbietern“ Deutschland AC 0,59 €/kWh, DC 0,79 €/kWh. Standzeitgebühr bei Drittanbietern: „AC-Ladepunkte: 0,15 € pro Minute ab 360 Minuten Anschlusszeit“, „DC‑Ladepunkte: 0,15 € pro Minute ab 45 Minuten Anschlusszeit“.",
+      "grund": "Preise an Aral-Säulen und Grundgebühr stimmen; die Seite nennt für den Extra-Tarif aber Preise bei anderen Betreibern (AC 0,59, DC 0,79), bei uns leer, und die Blockiergebühr an fremden AC-Säulen gilt jetzt erst ab 360 Minuten",
+      "unsere_werte": {
+        "anbieter": "Aral pulse",
+        "tarif": "Extra",
+        "grundgebuehr_eur_monat": 2.99,
+        "ac_eur_kwh": 0.41,
+        "dc_eur_kwh": 0.54,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Aral",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": 0.15,
+        "blockiergebuehr": "bei anderen Betreibern 0,15 €/Min. (AC ab 2 Std., DC ab 45 Min.)",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html",
+        "hinweis": "An Aral-Säulen; DC bis 50 kW 0,46."
+      }
+    },
+    {
+      "id": "adac-e-charge",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/e-angebote/ladekarte/",
+        "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html"
+      ],
+      "seite": "adac.de: „Die Blockiergebühr bei Fremdanbietern beträgt 15 Cent pro Minute. An AC-Ladepunkten wird sie ab 120 Minuten erhoben, an DC-Ladepunkten ab 45 Minuten.“ aral.de, Spalte ADAC e-Charge Tarif: 0,55 €/kWh an allen Aral-pulse-Säulen; „ADAC e-Charge Tarif – Preise bei Fremdanbietern“ Deutschland 0,75 €/kWh.",
+      "unsere_werte": {
+        "anbieter": "ADAC e-Charge",
+        "tarif": "e-Charge",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": 0.55,
+        "dc_eur_kwh": 0.55,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "Aral",
+        "andere_betreiber_ac_eur_kwh": 0.75,
+        "andere_betreiber_dc_eur_kwh": 0.75,
+        "blockiergebuehr_eur_min": 0.15,
+        "blockiergebuehr": "bei anderen Betreibern 0,15 €/Min. (AC ab 2 Std., DC ab 45 Min.)",
+        "gueltig_bis": null,
+        "quelle_url": "https://www.adac.de/rund-ums-fahrzeug/e-angebote/ladekarte/",
+        "hinweis": "Für ADAC-Mitglieder, über Aral pulse; bei anderen Betreibern 0,75 €/kWh."
+      }
     }
   ]
 }

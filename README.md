@@ -2,7 +2,7 @@
 
 Preise von Ladekarten und Lade-Apps für Elektroautos in Deutschland, als offene Daten. Gesammelt von Ampena, dem Ladeagenten fürs E-Auto, ausschließlich von den Preisseiten der Anbieter selbst.
 
-<!-- stand-de -->Stand: 29. Oktober 2026 (ältester Wert vom 22. Oktober 2026) · 33 Tarife von 19 Anbietern<!-- /stand-de -->
+<!-- stand-de -->Stand: 29. Oktober 2026 (ältester Wert vom 22. Oktober 2026) · 32 Tarife von 19 Anbietern<!-- /stand-de -->
 
 ## Dateien
 
@@ -65,7 +65,7 @@ Code (`tools/`): MIT, siehe `LICENSE-CODE`.
 
 Prices of charging cards and charging apps for electric cars in Germany, as open data. Collected by Ampena from the providers' own price pages only.
 
-<!-- stand-en -->As of 29 October 2026 (oldest value 22 October 2026): 33 tariffs from 19 providers.<!-- /stand-en -->
+<!-- stand-en -->As of 29 October 2026 (oldest value 22 October 2026): 32 tariffs from 19 providers.<!-- /stand-en -->
 
 All prices in euros including VAT, as stated on the provider's page; an empty field means the page does not state the value. Field names are German: `grundgebuehr_eur_monat` monthly fee, `ac_eur_kwh` / `dc_eur_kwh` / `hpc_eur_kwh` price per kWh for AC, DC and higher-power DC, `preise_gelten_bei` these prices apply only at this operator's stations, `andere_betreiber_*` price at other operators (highest value if the provider states a range), `blockiergebuehr` idle fee, `gueltig_bis` end of a promotional price, `stand` date we read and checked the price on the provider's page, `quelle_url` provider's price page, `hinweis` notes.
 
