@@ -9,7 +9,7 @@
   "waehrung": "EUR",
   "preise_inkl_mwst": true,
   "anzahl_anbieter": 19,
-  "anzahl_tarife": 32,
+  "anzahl_tarife": 33,
   "tarife": [
     {
       "id": "acv-ladekarte-ladetarif",
@@ -100,6 +100,24 @@
       "stand": "2026-10-29",
       "quelle_url": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html",
       "hinweis": "An Aral-Säulen; DC bis 50 kW 0,52; bei anderen Betreibern AC 0,59, DC 0,79."
+    },
+    {
+      "id": "aral-pulse-extra",
+      "anbieter": "Aral pulse",
+      "tarif": "Extra",
+      "grundgebuehr_eur_monat": 2.99,
+      "ac_eur_kwh": 0.41,
+      "dc_eur_kwh": 0.54,
+      "hpc_eur_kwh": null,
+      "preise_gelten_bei": "Aral",
+      "andere_betreiber_ac_eur_kwh": 0.59,
+      "andere_betreiber_dc_eur_kwh": 0.79,
+      "blockiergebuehr_eur_min": 0.15,
+      "blockiergebuehr": "bei anderen Betreibern 0,15 €/Min. (AC ab 6 Std., DC ab 45 Min.)",
+      "gueltig_bis": null,
+      "stand": "2026-10-29",
+      "quelle_url": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html",
+      "hinweis": "An Aral-Säulen; DC bis 50 kW 0,46; bei anderen Betreibern AC 0,59, DC 0,79."
     },
     {
       "id": "electra-app-ohne-abo",
