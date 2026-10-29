@@ -5,7 +5,7 @@
   "lizenz_url": "https://creativecommons.org/licenses/by/4.0/",
   "namensnennung": "Ladekarten-Tarife (Ampena), https://github.com/jonasdannenmaier/ladekarten-tarife, Lizenz: CC BY 4.0",
   "stand": "2026-10-29",
-  "aeltester_stand": "2026-10-13",
+  "aeltester_stand": "2026-10-22",
   "waehrung": "EUR",
   "preise_inkl_mwst": true,
   "anzahl_anbieter": 19,
@@ -403,7 +403,7 @@
       "blockiergebuehr_eur_min": null,
       "blockiergebuehr": null,
       "gueltig_bis": null,
-      "stand": "2026-10-13",
+      "stand": "2026-10-29",
       "quelle_url": "https://www.ionity.eu/de/abonnements",
       "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
     },
@@ -421,7 +421,7 @@
       "blockiergebuehr_eur_min": null,
       "blockiergebuehr": null,
       "gueltig_bis": null,
-      "stand": "2026-10-13",
+      "stand": "2026-10-29",
       "quelle_url": "https://www.ionity.eu/de/abonnements",
       "hinweis": "Mindestpreis. Nur an IONITY-Säulen."
     },
@@ -439,9 +439,9 @@
       "blockiergebuehr_eur_min": null,
       "blockiergebuehr": null,
       "gueltig_bis": null,
-      "stand": "2026-10-13",
+      "stand": "2026-10-29",
       "quelle_url": "https://www.ionity.eu/de/abonnements",
-      "hinweis": "Nur an IONITY-Säulen."
+      "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
     },
     {
       "id": "ionity-power",
@@ -457,9 +457,9 @@
       "blockiergebuehr_eur_min": null,
       "blockiergebuehr": null,
       "gueltig_bis": null,
-      "stand": "2026-10-13",
+      "stand": "2026-10-29",
       "quelle_url": "https://www.ionity.eu/de/abonnements",
-      "hinweis": "Nur an IONITY-Säulen."
+      "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
     },
     {
       "id": "kaufland-app",

@@ -229,6 +229,108 @@
         "quelle_url": "https://www.go-electra.com/de/electra-plus/",
         "hinweis": "An Electra-Säulen 0,20 €/kWh unter dem App-Preis; bei Atlante, Fastned und IONITY 0,64 €/kWh."
       }
+    },
+    {
+      "id": "ionity-direct",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.ionity.eu/de/abonnements"
+      ],
+      "seite": "Land Deutschland, monatlich: „IONITY Direct aktuell ab 0,72 €/kWh“, „Kein Abo oder monatliche Gebühren“, „Ladepreise variieren je nach Ladesäule und können höher sein als der angezeigte Mindestpreis“.",
+      "unsere_werte": {
+        "anbieter": "IONITY",
+        "tarif": "Direct",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.72,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "IONITY",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.ionity.eu/de/abonnements",
+        "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
+      }
+    },
+    {
+      "id": "ionity-app",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.ionity.eu/de/abonnements"
+      ],
+      "seite": "Land Deutschland, monatlich: „IONITY App aktuell ab 0,68 €/kWh“, „Kein Abo oder monatliche Gebühren“, „Ladepreise variieren je nach Ladesäule und können höher sein als der angezeigte Mindestpreis“.",
+      "unsere_werte": {
+        "anbieter": "IONITY",
+        "tarif": "App",
+        "grundgebuehr_eur_monat": 0,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.68,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "IONITY",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.ionity.eu/de/abonnements",
+        "hinweis": "Mindestpreis. Nur an IONITY-Säulen."
+      }
+    },
+    {
+      "id": "ionity-motion",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.ionity.eu/de/abonnements"
+      ],
+      "seite": "Land Deutschland, monatlich: „IONITY Motion aktuell ab 0,51 €/kWh plus 5,99 € pro Monat“, „Ladepreise variieren je nach Ladesäule und können höher sein als der angezeigte Mindestpreis“.",
+      "korrektur": {
+        "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
+      },
+      "unsere_werte": {
+        "anbieter": "IONITY",
+        "tarif": "Motion",
+        "grundgebuehr_eur_monat": 5.99,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.51,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "IONITY",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.ionity.eu/de/abonnements",
+        "hinweis": "Nur an IONITY-Säulen."
+      }
+    },
+    {
+      "id": "ionity-power",
+      "ergebnis": "bestaetigt",
+      "urls": [
+        "https://www.ionity.eu/de/abonnements"
+      ],
+      "seite": "Land Deutschland, monatlich: „IONITY Power aktuell ab 0,41 €/kWh plus 11,99 € pro Monat“, „Ladepreise variieren je nach Ladesäule und können höher sein als der angezeigte Mindestpreis“.",
+      "korrektur": {
+        "hinweis": "Mindestpreis, an der Säule ggf. höher. Nur an IONITY-Säulen."
+      },
+      "unsere_werte": {
+        "anbieter": "IONITY",
+        "tarif": "Power",
+        "grundgebuehr_eur_monat": 11.99,
+        "ac_eur_kwh": null,
+        "dc_eur_kwh": 0.41,
+        "hpc_eur_kwh": null,
+        "preise_gelten_bei": "IONITY",
+        "andere_betreiber_ac_eur_kwh": null,
+        "andere_betreiber_dc_eur_kwh": null,
+        "blockiergebuehr_eur_min": null,
+        "blockiergebuehr": null,
+        "gueltig_bis": null,
+        "quelle_url": "https://www.ionity.eu/de/abonnements",
+        "hinweis": "Nur an IONITY-Säulen."
+      }
     }
   ]
 }
